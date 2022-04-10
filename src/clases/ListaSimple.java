@@ -168,7 +168,6 @@ public class ListaSimple {
                         aux.setSgt(aux2.getSgt());
                         aux2.setSgt(aux);
                         this.setPtr(aux2);
-                //        aux2 = aux.getSgt();
                     }else{
                         Nodo aux3 = this.getPtr();
                         while(aux3.getSgt()!=aux){
@@ -177,7 +176,6 @@ public class ListaSimple {
                         aux3.setSgt(aux2);
                         aux.setSgt(aux2.getSgt());
                         aux2.setSgt(aux);
-                    //    aux2 = aux.getSgt();
                     }
                     aux = this.getPtr();
                     aux2 = this.getPtr().getSgt();
