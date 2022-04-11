@@ -34,7 +34,8 @@ public class Principal {
                             + "8. Eliminar nodo\n"
                             + "9. Ordenar Ascendente\n"
                             + "10. Ordenar Descendente\n"
-                            + "11. Salir\n"));
+                            + "11. Eliminar repetidos\n"
+                            + "12. Salir\n"));
             }catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(null, "Error en la informacion suministrada, debe digitar un numero");
             }
@@ -110,6 +111,11 @@ public class Principal {
                     break;
                 }
                 case 11:{
+                    ptr.eliminarRepetidos();
+                    JOptionPane.showMessageDialog(null, "Repetidos eliminados");
+                    break;
+                }
+                case 12:{
                     int salir = JOptionPane.showConfirmDialog(null, "Realmente desea salir?");
                     if(salir == 0){
                         sw = false;

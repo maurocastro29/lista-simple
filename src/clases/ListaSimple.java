@@ -219,4 +219,42 @@ public class ListaSimple {
         }
         return false;
     }
+    
+    public void eliminarRepetidos(){
+        if(!this.isVacia()){
+            Nodo aux = this.getPtr();
+            Nodo aux2 = aux.getSgt();
+            Nodo aux3 = null;
+            while(aux.getSgt()!=null){
+                while(aux2!=null){
+                    if(aux.getDato() == aux2.getDato()){
+                        if(aux.getSgt() == aux2){
+                            aux.setSgt(aux2.getSgt());
+                            aux2.setSgt(null);
+                        }else if(aux2.getSgt()==null){
+                            aux3 = aux;
+                            while(aux3.getSgt()!=aux2){
+                                aux3 = aux3.getSgt();
+                            }
+                            aux3.setSgt(null);
+                        }else{
+                            aux3 = aux;
+                            while(aux3.getSgt()!=aux2){
+                                aux3 = aux3.getSgt();
+                            }
+                            aux3.setSgt(aux2.getSgt());
+                            aux2.setSgt(null);
+                        }
+                        aux2 = aux.getSgt();
+                    }else{
+                        aux2 = aux2.getSgt();
+                    }
+                }
+                aux = aux.getSgt();
+                aux2 = aux.getSgt();
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "La lista esta vacia");
+        }
+    }
 }
